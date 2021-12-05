@@ -1,4 +1,6 @@
-SRC_DIR := src/day4
+TODAY := $(shell date +"%e" | sed 's/\s\+//')
+
+SRC_DIR := src/day$(TODAY)
 src = $(wildcard $(SRC_DIR)/*.java)
 BIN_DIR := bin
 .class = $(patsubst src/%.java,$(BIN_DIR)/%.class,$(src))
