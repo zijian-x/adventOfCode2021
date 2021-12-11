@@ -4,4 +4,6 @@
 
 today=$(date +"%e" | sed 's/\s\+//')
 file="resources/day$today/input"
+[ -n $file ] && sudo rm $file && echo "old file removed"
+
 curl --cookie "session=$AOC_SESSION" https://adventofcode.com/2021/day/$today/input > $file && chmod 444 $file
